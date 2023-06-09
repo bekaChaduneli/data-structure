@@ -158,3 +158,5 @@ list.prepend(20);
 list.print();
 list.prepend(30);
 list.print();
+
+module.exports = LinkedList;
