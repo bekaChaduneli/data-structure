@@ -76,6 +76,21 @@ class BinarySearchTree {
             console.log(root.value);
         }
     }
+
+    levelOrder() {
+        const queue = [];
+        queue.push(this.root);
+        while (queue.length) {
+            let curr = queue.shift();
+            console.log(curr.value);
+            if (curr.left) {
+                queue.push(curr.left);
+                if (curr.right) {
+                    queue.push(curr.right);
+                }
+            }
+        }
+    }
 }
 
 const bst = new BinarySearchTree();
@@ -91,4 +106,4 @@ console.log(bst.search(bst.root, 10));
 console.log(bst.search(bst.root, 5));
 console.log(bst.search(bst.root, 15));
 console.log(bst.search(bst.root, 20));
-bst.postOrder(bst.root);
+bst.levelOrder();
